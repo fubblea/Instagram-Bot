@@ -22,7 +22,6 @@ while True:
     with open('schedule.txt', 'r') as f:
         for line in f:
             if line != '':
-                #TODO Albums path error
                 line = line.rstrip()
                 line = line.replace("'","")
                 line = line.strip('][').split('. ')               

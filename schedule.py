@@ -85,7 +85,7 @@ def album_post():
     return
 
 while True:
-    print("-----Main Menu-----")
+    print("-----Schedule Post-----")
     print("0. Exit")
     print("1. Schedule Single-Image Post")
     print("2. Schedule Single-Video Post")

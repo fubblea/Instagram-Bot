@@ -1,6 +1,7 @@
 .env
 config
-test_photos
+test_media
+test.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

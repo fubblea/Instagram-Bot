@@ -1,3 +1,5 @@
+#Janky
+
 print("1. Schedule")
 print("2. Run bot")
 app = int(input("Run bot or schedule?: "))

@@ -4,6 +4,7 @@ test_media
 test.py
 temp.txt
 schedule.txt
+dist
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

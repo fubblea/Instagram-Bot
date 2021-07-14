@@ -7,6 +7,7 @@ name = "pypi"
 python-dotenv = "*"
 instagrapi = "*"
 tkcalendar = "*"
+pyinstaller = "*"
 
 [dev-packages]
 

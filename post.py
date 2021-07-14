@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 
 print("Logging in...")
 bot = Client()
-#bot.login(os.getenv("USER"),os.getenv("PASS"))
+bot.login(os.getenv("USER"),os.getenv("PASS"))
 
 def update_schedule(posts):
     os.remove('schedule.txt')
@@ -22,9 +22,10 @@ while True:
     with open('schedule.txt', 'r') as f:
         for line in f:
             if line != '':
+                #TODO Albums path error
                 line = line.rstrip()
                 line = line.replace("'","")
-                line = line.strip('][').split(', ')                   
+                line = line.strip('][').split('. ')               
                 posts.append(line)
     
     if len(posts) > 0:
@@ -34,19 +35,20 @@ while True:
             scheduled_date = datetime.strptime(posts[i][0], '%m/%d/%y %H:%M:%S')
             if datetime.now() >= scheduled_date:
                 if posts[i][1] == 'single_photo':
-                    #bot.photo_upload(path=posts[i][2], caption=posts[i][3])
+                    bot.photo_upload(path=posts[i][2], caption=posts[i][3])
                     print(f"Uploaded post scheduled for {scheduled_date}")
                     posts.pop(i)
                     update_schedule(posts)
                     i=0
                 elif posts[i][1] == 'single_video':
-                    #bot.video_upload(path=posts[i][2], caption=posts[i][3])
+                    bot.video_upload(path=posts[i][2], caption=posts[i][3])
                     print(f"Uploaded post scheduled for {scheduled_date}")
                     posts.pop(i)
                     update_schedule(posts)
                     i=0
                 elif posts[i][1] == 'album':
-                    #bot.album_upload(path=posts[i][2], caption=posts[i][3])
+                    paths = posts[i][2].strip('][').split(', ')  
+                    bot.album_upload(paths, caption=posts[i][3])
                     print(f"Uploaded post scheduled for {scheduled_date}")
                     posts.pop(i)
                     update_schedule(posts)

@@ -37,7 +37,7 @@ def photo_post():
     os.remove('temp.txt')
     
     with open('schedule.txt', 'a') as f:
-        f.write(str([date, 'single_photo', path, caption]) + '\n')
+        f.write(f"[{date}. 'album'. {path}. {caption}]" + '\n')
     return
 
 def video_post():
@@ -59,7 +59,7 @@ def video_post():
     os.remove('temp.txt')
     
     with open('schedule.txt', 'a') as f:
-        f.write(str([date, 'single_video', path, caption]) + '\n')
+        f.write(f"[{date}. 'album'. {path}. {caption}]" + '\n')
     return
 
 def album_post():
@@ -81,7 +81,7 @@ def album_post():
     os.remove('temp.txt')
     
     with open('schedule.txt', 'a') as f:
-        f.write(str([date, 'album', path, caption]) + '\n')
+        f.write(f"[{date}. 'album'. {path}. {caption}]" + '\n')
     return
 
 while True:
@@ -89,7 +89,7 @@ while True:
     print("0. Exit")
     print("1. Schedule Single-Image Post")
     print("2. Schedule Single-Video Post")
-    print("2. Schedule Album Post")
+    print("3. Schedule Album Post")
     
     try:
         option = int(input("Enter option: "))

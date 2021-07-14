@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-instabot = "*"
 python-dotenv = "*"
+instagrapi = "*"
 
 [dev-packages]
 

@@ -1,9 +1,10 @@
 from tkinter import *
 from tkcalendar import *
+import sys
 
 def pick():
     ws = Tk()
-    ws.title("Python Guides")
+    ws.title("Post Scheduler")
     ws.geometry("500x400")
     ws.config(bg="#cd950c")
 
@@ -18,12 +19,14 @@ def pick():
         m = min_sb.get()
         h = sec_hour.get()
         s = sec.get()
-        t = f"Your appointment is booked for {date} at {m}:{h}:{s}."
+        t = f"Your post is scheduled for {date} at {m}:{h}:{s}."
         
         with open('temp.txt', 'w') as f:
             f.write(str(f"{date} {h}:{m}:{s}"))
         
         msg_display.config(text=t)
+        ws.destroy()
+        ws.quit()
         
 
 
@@ -99,7 +102,7 @@ def pick():
 
     actionBtn =Button(
         ws,
-        text="Book Appointment",
+        text="Schedule Post",
         padx=10,
         pady=10,
         command=display_msg

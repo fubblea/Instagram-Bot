@@ -31,12 +31,13 @@ def photo_post():
         return
     
     time_picker.pick()
+    
     with open('temp.txt', 'r') as f:
         date = f.read()
     os.remove('temp.txt')
     
-    with open('schedule.txt', 'w') as f:
-        f.write(str([date, 'single_photo', path, caption]))
+    with open('schedule.txt', 'a') as f:
+        f.write('\n' + str([date, 'single_photo', path, caption]))
     return
 
 while True:

@@ -1,8 +1,8 @@
-from datetime import time
 import tkinter as tk
 from tkinter import filedialog
 import time_picker
 import os
+import sys
 
 def find_single_media():
     root = tk.Tk()
@@ -42,6 +42,7 @@ def photo_post():
 
 while True:
     print("-----Main Menu-----")
+    print("0. Exit")
     print("1. Schedule Single-Image Post")
     
     try:
@@ -49,7 +50,9 @@ while True:
     except:
         print("Invalid Option")
     
-    if option == 1:
+    if option == 0:
+        sys.exit()
+    elif option == 1:
         photo_post()
     else:
         print("Invalid Option")

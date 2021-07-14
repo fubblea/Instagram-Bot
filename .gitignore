@@ -5,6 +5,7 @@ test.py
 temp.txt
 schedule.txt
 dist
+build
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
